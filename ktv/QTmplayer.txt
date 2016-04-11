@@ -1,0 +1,35 @@
+1.进程类:
+	QProcess *playprocess = new QProcess;
+	playprocess->start("mplayer",QStringList()<<"-slave"<<"-quiet"<<"-af"<<"channels=1:1"<<"http://192.168.0.2/mp4/kxbsn.mp4");
+	mplayer播放没有图像加参数<<"-vo"<<"x11"<<
+	-fs全屏mplayer -af channels=声道切换
+	playprocess->write("balance 1 1\n");		//声道切换
+	playprocess->write("balance -1 1\n");		//声道切换
+	playprocess->write("volume +5\n");		//音量
+	playprocess->write("volume -5\n");		//音量
+	playprocess->write("pause\n");			//暂停
+	playprocess->write("seek +5\n");		//快进
+
+	QProcess信号: finished();started();stateChanged();readyReadStandardOutput();
+
+2.网络下载类:
+	xxx.pro  QT += network
+	#include <QNetworkAccessManager>
+	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+ 	connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(replyFinished(QNetworkReply*)));
+	currentPicture = new QPixmap;
+	
+	manager->get(QNetworkRequest(QUrl("http://qt.nokia.com")));
+	//槽函数
+	void replyFinished(QNetworkReply *reply)
+	{
+    	    if(reply->error() == QNetworkReply::NoError)
+    	    {
+        	currentPicture->loadFromData(reply->readAll());	//获取字节流构造 QPixmap 对象
+        	QString filename = "1.jpg";
+                currentPicture->save(filename);//保存图片
+		PushButton.setStyleSheet(QString("border-image: url(%1);").arg(filename));
+
+		reply->request().url().path(); //返回路径
+    	    }
+	}

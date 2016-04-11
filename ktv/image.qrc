@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/songer.jpg</file>
+        <file>image/bfzn_stop.png</file>
+        <file>image/bfzn_begin.png</file>
+        <file>image/select.png</file>
+        <file>image/frist.png</file>
+        <file>image/zuo.png</file>
+        <file>image/you.png</file>
+        <file>image/re.png</file>
+        <file>image/zhuye.jpg</file>
+        <file>image/paihangbang.jpg</file>
+        <file>image/gexing.jpg</file>
+        <file>image/fuwu.jpg</file>
+        <file alias="1">image/beij.jpg</file>
+        <file alias="yidian">image/1.jpg</file>
+        <file alias="2">image/geming.jpg</file>
+        <file>image/voice.png</file>
+        <file>image/review.png</file>
+        <file alias="a">image/allbeiji.jpg</file>
+        <file alias="vois">image/button/13.png</file>
+        <file alias="silnes">image/button/12.png</file>
+        <file alias="+">image/button/11.png</file>
+        <file alias="-">image/button/10.png</file>
+        <file alias="stop">image/button/9.png</file>
+        <file alias="star">image/button/8.png</file>
+        <file alias="next">image/button/7.png</file>
+    </qresource>
+</RCC>
